@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <div>
+    <p>1から200までの好きな数字を入力してね</p>
+    <p><input type="number" id="in" placeholder="数字を入力してね"></p>
+    <button id="btn">今日のTodoは何ですか！</button>
+  </div>
+  <div id="result"></div>
+
+	<script>
+	const result = document.getElementById('result')
+	const input = document.getElementById('in')
+	const btn = document.getElementById('btn')
+
+	const url = 'https://jsonplaceholder.typicode.com/todos/'
+
+
+	btn.addEventListener('click', () =>{
+			const num = input.value
+			const n = Math.floor(Math.random() * num)
+			const param = url + n
+
+			fetch(param)
+			.then((res) => {
+					return res.json()
+			})
+			.then((json) => {
+					result.textContent = json.title
+					console.log(json.title)
+			})
+			.catch((e) => {
+					console.error(e.message)
+			}) 
+	})
+	</script>
+</body>
+</html>
