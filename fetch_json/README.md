@@ -5,5 +5,5 @@ fetchでweb apiを叩くための遊び～～
 
 URL: https://jsonplaceholder.typicode.com/
 
-- JSでAPIにアクセスする
+- JSでAPIにアクセスする  
 https://aspnet-mvc.clock-up.jp/contents/rest-api/access-by-js
