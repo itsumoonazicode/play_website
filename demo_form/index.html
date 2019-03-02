@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>demo form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <style>
+        .is-darkmode-low {
+            background-color: rgb(28, 41, 56);
+        }
+        .is-darkmode-middle {
+            background-color: rgb(16, 23, 30);
+            caret-color: rgb(255, 255, 255);
+        }
+        .is-darkmode-white {
+            color: rgb(255, 255, 255);
+        }
+        .button.is-link.is-darkmode-btn {
+            background-color: #1da1f2;
+        }
+        .button.is-link.is-darkmode-btn:hover {
+            background-color: #1b95e0;
+        }
+        .input, .textarea {
+            border-color: transparent;
+        }
+    </style>
+    <section class="hero is-darkmode-low">
+        <div class="hero-body">
+            <div class="container">
+            <h1 class="title is-darkmode-white">
+                Demo web form
+            </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section is-darkmode-middle">
+        <div class="container is-darkmode-low" style="padding:10px;">
+            <form action="">
+                <div class="field">
+                    <label for="id" class="label is-darkmode-white">名前</label>
+                    <div class="control">
+                        <input type="text" name="" id="name" class="input is-darkmode-middle is-darkmode-white">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="num" class="label is-darkmode-white">数字</label>
+                    <div class="control">
+                        <input type="number" name="" id="num" class="input is-darkmode-middle is-darkmode-white">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="phone" class="label is-darkmode-white">電話番号</label>
+                    <div class="control">
+                        <input type="tel" name="" id="phone" class="input is-darkmode-middle is-darkmode-white">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="mail" class="label is-darkmode-white">メールアドレス</label>
+                    <div class="control">
+                        <input type="email" name="" id="mail" class="input is-darkmode-middle is-darkmode-white">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="txt" class="label is-darkmode-white">文章入力欄</label>
+                    <div class="control">
+                        <textarea name="" id="txt" cols="30" rows="10" class="textarea is-darkmode-middle is-darkmode-white"></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-link is-darkmode-btn">送信</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
