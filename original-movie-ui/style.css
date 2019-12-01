@@ -1,0 +1,84 @@
+#currentTime {
+	background-color: black;
+	height: 10px;
+	width: 0;
+}
+#video {
+	background-color: #333;
+	width: 600px;
+	height: 400px;
+}
+.sizeAdjust {
+	width: 800px !important;
+	height: 600px !important;
+}
+
+/* ここからデザイン */
+.container {
+	position: relative;
+	width: 600px;
+}
+.position-absolute {
+	position: absolute;
+}
+#change {
+	bottom: 10px;
+	left: 0;
+}
+#mute {
+	bottom: 10px;
+	left: 50px;
+}
+#fullscreen {
+	bottom: 10px;
+	left: 100px;
+}
+#seekbar {
+	bottom: 20px;
+	left: 200px;
+}
+
+/* シークバー */
+[type="range"] {
+	-webkit-appearance: none;
+	cursor: pointer;
+	height: 2px;
+}
+[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-color: #f00;
+	border-radius: 50%;
+	height: 12px;
+	width: 12px;
+}
+
+/* ボタンのスタイルリセット */
+.btn {
+	background: transparent;
+	border: none;
+	appearance: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+.btn-small {
+	width: 30px;
+	height: 30px;
+}
+
+.btn-bk {
+	background-repeat: no-repeat;
+}
+
+/* 再生ボタンのデザイン */
+.play {
+	background-position: top left 4px;
+	background-image: url(130_arr_hoso.svg);
+	background-size: 36px;
+}
+/* 停止ボタンのデザイン */
+.pause {
+	background-image: url(pause.svg);
+	background-position: top 6px left 8px;
+	background-size: 22px;
+}
