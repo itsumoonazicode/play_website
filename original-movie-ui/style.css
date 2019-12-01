@@ -5,8 +5,8 @@
 }
 #video {
 	background-color: #333;
-	width: 600px;
-	height: 400px;
+	width: 100%;
+	height: 600px;
 }
 .sizeAdjust {
 	width: 800px !important;
@@ -16,7 +16,7 @@
 /* ここからデザイン */
 .container {
 	position: relative;
-	width: 600px;
+	width: 800px;
 }
 .position-absolute {
 	position: absolute;
@@ -27,29 +27,158 @@
 }
 #mute {
 	bottom: 10px;
-	left: 50px;
+	left: 60px;
 }
 #fullscreen {
 	bottom: 10px;
-	left: 100px;
+	left: 500px;
 }
 #seekbar {
-	bottom: 20px;
-	left: 200px;
+	bottom: 18px;
+	left: 140px;
+}
+_:-ms-lang(x)::-ms-backdrop, #seekbar {
+	/* IE11 のみ適用される */
+	padding: 0;
+	bottom: 2px;
 }
 
 /* シークバー */
-[type="range"] {
+/* [type="range"] {
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	cursor: pointer;
 	height: 2px;
 }
+_:-ms-lang(x)::-ms-backdrop, [type="range"] {
+	-webkit-appearance: initial;
+}
 [type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	background-color: #f00;
 	border-radius: 50%;
 	height: 12px;
 	width: 12px;
+}
+[type="range"]::-ms-thumb {
+	-webkit-appearance: initial;
+	-moz-appearance: initial;
+	appearance: initial;
+	background-color: #f00;
+	border-radius: 50%;
+	height: 12px;
+	width: 12px;
+}
+[type="range"]::-ms-track {
+	height: 10px;
+}
+
+input[type=range]::-ms-tooltip{
+	display:none;
+}
+input[type=range]::-moz-range-track{
+	height:0;
+}
+input[type=range]::-moz-range-thumb{
+	background:#f00;
+	height:20px;
+	width:20px;
+	border:none;
+	border-radius:50%;
+} */
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+	cursor: pointer;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #f00;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	cursor: pointer;
+}
+input[type=range]::-ms-fill-upper {
+	background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	cursor: pointer;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #f00;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
 }
 
 /* ボタンのスタイルリセット */
@@ -59,11 +188,12 @@
 	appearance: none;
 	cursor: pointer;
 	padding: 0;
+	color: #ddd;
 }
 
-.btn-small {
-	width: 30px;
-	height: 30px;
+.btn-medium {
+	width: 60px;
+	height: 60px;
 }
 
 .btn-bk {
@@ -74,11 +204,22 @@
 .play {
 	background-position: top left 4px;
 	background-image: url(130_arr_hoso.svg);
-	background-size: 36px;
+	background-size: 60px;
 }
 /* 停止ボタンのデザイン */
 .pause {
 	background-image: url(pause.svg);
-	background-position: top 6px left 8px;
-	background-size: 22px;
+	background-position: top 14px left 18px;
+	background-size: 30px;
+}
+
+.volume-on {
+	background-image: url(volume-on.svg);
+	background-position: top 12px left 16px;
+	background-size: 36px;
+}
+.volume-off {
+	background-image: url(volume-off.svg);
+	background-position: top 12px left 16px;
+	background-size: 36px;
 }

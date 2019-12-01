@@ -11,7 +11,18 @@ $(function() {
 			changeBtn.removeClass("pause");
 			changeBtn.addClass("play");
 		}
-	})
+	});
+	
+	var volume = $("#mute");
+	$(document).on("click", "#mute", function() {
+		if(volume.hasClass("volume-on")) {
+			volume.removeClass("volume-on");
+			volume.addClass("volume-off");
+		} else {
+			volume.removeClass("volume-off");
+			volume.addClass("volume-on");
+		}
+	});
 
 	$(document).on("click", "#change.play", function() {
 		video.play();
@@ -25,26 +36,38 @@ $(function() {
 		video.muted = video.muted ? false : true;
 	});
 
+	video.addEventListener("loadedmetadata", function() {
+		seekbar.min = seekbar.value = video.initialTime || 0;
+		// シークバーの見た目の長さを4倍にしたためmaxの値も4倍
+		seekbar.max = (video.duration) *4;
+		// stepの値の初期値は1。
+		// stepの値 * 動画自体の尺 = seekbar.max(シークバーの見た目の長さもこれに揃える)
+		seekbar.step = ((video.duration) * 4) / (video.duration)
+		// seekbar.maxの値にwidthを合わせる
+		$("#seekbar")[0].style.width = (video.duration)*4 + "px";
+	}, false);
 	
 	// シークバー
-	video.addEventListener("timeupdate", seekbar, false);
+	video.addEventListener("timeupdate", function() {
+		seekbar.value = (video.currentTime)*4;
+	}, false);
 	
-	function seekbar() {
-		// 動画全体の時間を取得（秒）
-		var fullTime = video.duration;
-		var now = video.currentTime;
-		// 動画全体に対する現在の位置
-		var setPos = (now / fullTime) * 100;
+	// function seekbar() {
+	// 	// 動画全体の時間を取得（秒）
+	// 	var fullTime = video.duration;
+	// 	var now = video.currentTime;
+	// 	// 動画全体に対する現在の位置
+	// 	var setPos = (now / fullTime) * 100;
 		
-		$("#currentTime").css({"width": setPos + "px"});
+	// 	$("#currentTime").css({"width": setPos + "px"});
 		
-		var seekbar = $("#seekbar")[0];
-		seekbar.value = setPos;
-	}
+	// 	var seekbar = $("#seekbar")[0];
+	// 	seekbar.value = setPos;
+	// }
 	
 	var seekbar = $("#seekbar")[0];
 	seekbar.addEventListener("change", function() {
-		video.currentTime = seekbar.value;
+		video.currentTime = this.valueAsNumber;
 	});
 	
 	
