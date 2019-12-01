@@ -14,7 +14,11 @@
 
 ## `min`, `max`, `step`
 
-[<input type="range"> - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/Input/range)
+[&lt;input type="range"&gt; - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/ja/docs/Web/HTML/Element/Input/range)
+
+## `video`タグに関連することで全体的な参考として
+
+[video要素、audio要素をJavaScriptから操作する－HTML5のAPI、および、関連仕様](http://www.htmq.com/video/)
 
 # 検証環境
 
