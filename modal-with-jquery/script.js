@@ -1,11 +1,8 @@
 $(function() {
   $('#modal-btn').on('click', function() {
-    $('.modal-contents').css({
-      'position': 'absolute',
-      'top': '50%',
-      'left': '50%',
-      'transform': 'translate(-50%, -50%)',
-      'z-index': '2'
-    });
+    $('.modal').addClass('modal-container');
+  });
+  $('.modal-close').on('click', function() {
+    $('.modal').removeClass('modal-container');
   })
 });
