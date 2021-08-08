@@ -28,3 +28,16 @@
   padding: 8px;
   cursor: pointer;
 }
+
+// コンテンツかさ増し用スタイル
+.img-wrapper {
+  display: inline-block;
+  overflow: hidden;
+}
+.img-hover-zoom {
+  transition-duration: 0.5s;
+}
+.img-hover-zoom:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
