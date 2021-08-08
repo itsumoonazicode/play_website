@@ -13,4 +13,10 @@ $(function() {
   $('.modal-close').on('click', function() {
     $('.modal').removeClass('modal-container');
   })
+
+  $(window).on('keydown', function(e) {
+    if(e.key === 'Escape') {
+      $('.modal').removeClass('modal-container');
+    }
+  })
 });
